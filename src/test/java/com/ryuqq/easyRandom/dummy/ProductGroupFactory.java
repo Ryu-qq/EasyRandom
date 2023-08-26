@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> implements DummyDataFactory<ProductGroup> {
+public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup>  {
     @Override
     protected Class<ProductGroup> getTypeClass() {
         return ProductGroup.class;

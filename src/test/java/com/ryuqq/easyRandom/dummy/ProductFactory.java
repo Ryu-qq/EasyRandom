@@ -8,7 +8,7 @@ import org.jeasy.random.api.Randomizer;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProductFactory extends AbstractDummyDataFactory<Product> implements DummyDataFactory<Product> {
+public class ProductFactory extends AbstractDummyDataFactory<Product> {
 
     @Override
     protected Class<Product> getTypeClass() {

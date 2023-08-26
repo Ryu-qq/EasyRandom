@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static org.jeasy.random.FieldPredicates.*;
 
-public class CartFactory extends AbstractDummyDataFactory<Cart> implements DummyDataFactory<Cart> {
+public class CartFactory extends AbstractDummyDataFactory<Cart> {
 
     @Override
     protected Class<Cart> getTypeClass() {
