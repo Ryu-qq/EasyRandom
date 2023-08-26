@@ -14,13 +14,19 @@ import java.util.concurrent.atomic.AtomicLong;
 import static org.jeasy.random.FieldPredicates.inClass;
 import static org.jeasy.random.FieldPredicates.named;
 
-public abstract class AbstractDummyDataFactory<T> {
-
-    protected Map<String, Randomizer<?>> fieldRandomizers = new HashMap<>();
+public abstract class AbstractDummyDataFactory<T> implements DummyDataFactory<T>  {
 
     protected abstract Class<T> getTypeClass();
 
-    public T create() {
+    protected abstract Map<String, Randomizer<?>> getFieldRandomizers(long... ids);
+
+    @Override
+    public T createDummy(long... ids) {
+        if (ids.length == 0) {
+            throw new IllegalArgumentException("ids size must be greater than 0");
+        }
+
+        Map<String, Randomizer<?>> fieldRandomizers = getFieldRandomizers(ids);
         return createWithParams(fieldRandomizers);
     }
 

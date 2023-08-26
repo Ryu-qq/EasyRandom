@@ -15,14 +15,13 @@ public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> 
         return ProductGroup.class;
     }
 
+
     @Override
-    public ProductGroup createDummy(long... ids) {
-        if(ids.length>0){
-            fieldRandomizers.put("id", ()-> ids[0]);
-            fieldRandomizers.putIfAbsent("cartDetails", new ProductGroupDetailsRandomizer(ids[1], ids[2]));
-            return createWithParams(fieldRandomizers);
-        }
-        throw new IllegalArgumentException("ids size must bigger than 0 ");
+    protected Map<String, Randomizer<?>> getFieldRandomizers(long... ids) {
+        Map<String, Randomizer<?>> fieldRandomizers = new HashMap<>();
+        fieldRandomizers.put("id", () -> ids[0]);
+        fieldRandomizers.putIfAbsent("productGroupDetails", new ProductGroupDetailsRandomizer(ids[1], ids[2]));
+        return fieldRandomizers;
     }
 
 }

@@ -16,11 +16,9 @@ public class ProductFactory extends AbstractDummyDataFactory<Product> implements
     }
 
     @Override
-    public Product createDummy(long... ids) {
-        if(ids.length>0){
-            fieldRandomizers.put("id", ()-> ids[0]);
-            return create();
-        }
-        throw new IllegalArgumentException("ids size must bigger than 0 ");
+    protected Map<String, Randomizer<?>> getFieldRandomizers(long... ids) {
+        Map<String, Randomizer<?>> fieldRandomizers = new HashMap<>();
+        fieldRandomizers.put("id", () -> ids[0]);
+        return fieldRandomizers;
     }
 }
