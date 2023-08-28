@@ -13,7 +13,7 @@ import java.util.Map;
 public class ProductFactory extends AbstractDummyDataFactory<Product> {
 
     @Override
-    protected Class<Product> getTypeClass() {
+    public Class<Product> getTypeClass() {
         return Product.class;
     }
 
@@ -25,8 +25,4 @@ public class ProductFactory extends AbstractDummyDataFactory<Product> {
         return fieldRandomizers;
     }
 
-    @Override
-    public Class<Product> getClassType() {
-        return Product.class;
-    }
 }

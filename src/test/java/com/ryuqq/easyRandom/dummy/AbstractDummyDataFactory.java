@@ -14,8 +14,6 @@ import static org.jeasy.random.FieldPredicates.named;
 
 public abstract class AbstractDummyDataFactory<T> implements DummyDataFactory<T>  {
 
-    protected abstract Class<T> getTypeClass();
-
     protected abstract Map<String, Randomizer<?>> getFieldRandomizers(long... ids);
 
     @Override

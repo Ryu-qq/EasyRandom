@@ -13,7 +13,7 @@ import java.util.Map;
 @TestConfiguration
 public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> {
     @Override
-    protected Class<ProductGroup> getTypeClass() {
+    public Class<ProductGroup> getTypeClass() {
         return ProductGroup.class;
     }
 
@@ -26,8 +26,4 @@ public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> 
         return fieldRandomizers;
     }
 
-    @Override
-    public Class<ProductGroup> getClassType() {
-        return ProductGroup.class;
-    }
 }
