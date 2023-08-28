@@ -3,6 +3,7 @@ package com.ryuqq.easyRandom.dummy.product;
 import com.ryuqq.easyRandom.domain.product.Product;
 
 import com.ryuqq.easyRandom.dummy.AbstractDummyDataFactory;
+import org.jeasy.random.EasyRandomParameters;
 import org.jeasy.random.api.Randomizer;
 import org.springframework.boot.test.context.TestConfiguration;
 
@@ -18,11 +19,12 @@ public class ProductFactory extends AbstractDummyDataFactory<Product> {
     }
 
     @Override
-    protected Map<String, Randomizer<?>> getFieldRandomizers(long... ids) {
+    protected EasyRandomParameters getFieldRandomizers(long... ids) {
         Map<String, Randomizer<?>> fieldRandomizers = new HashMap<>();
-        fieldRandomizers.put("id", () -> ids[0]);
-        fieldRandomizers.put("productGroupId", () -> ids[1]);
-        return fieldRandomizers;
+        fieldRandomizers.put("productGroupId", () -> ids[0]);
+        return setParam(fieldRandomizers, true);
     }
 
 }
+
+

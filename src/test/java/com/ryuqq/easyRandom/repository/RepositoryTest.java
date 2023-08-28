@@ -21,10 +21,5 @@ import org.springframework.context.annotation.Import;
 @DataJpaTest
 public class RepositoryTest {
 
-    @Autowired
-    EntityFactoryRegistry entityFactoryRegistry;
-
-    protected <T> DummyDataFactory<T> getDummyFactory(Class<T> entityType) {
-        return (DummyDataFactory<T>) entityFactoryRegistry.getByClassType(entityType);
-    }
+    
 }
