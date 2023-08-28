@@ -1,7 +1,6 @@
-package com.ryuqq.easyRandom.dmain.product.embedded;
+package com.ryuqq.easyRandom.domain.product.embedded;
 
 import lombok.*;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.Embeddable;
 

@@ -1,6 +1,6 @@
-package com.ryuqq.easyRandom.dummy.random.cart;
+package com.ryuqq.easyRandom.dummy.cart.random;
 
-import com.ryuqq.easyRandom.dmain.cart.embedded.CartDetails;
+import com.ryuqq.easyRandom.domain.cart.embedded.CartDetails;
 import org.jeasy.random.api.Randomizer;
 
 import java.util.Random;

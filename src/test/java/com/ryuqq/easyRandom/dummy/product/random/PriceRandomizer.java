@@ -1,6 +1,6 @@
-package com.ryuqq.easyRandom.dummy.random.product;
+package com.ryuqq.easyRandom.dummy.product.random;
 
-import com.ryuqq.easyRandom.dmain.product.embedded.Price;
+import com.ryuqq.easyRandom.domain.product.embedded.Price;
 import org.jeasy.random.api.Randomizer;
 
 import java.util.Random;

@@ -1,7 +1,7 @@
-package com.ryuqq.easyRandom.dmain.product;
+package com.ryuqq.easyRandom.domain.product;
 
-import com.ryuqq.easyRandom.dmain.common.BaseEntity;
-import com.ryuqq.easyRandom.dmain.product.embedded.ProductStatus;
+import com.ryuqq.easyRandom.domain.common.BaseEntity;
+import com.ryuqq.easyRandom.domain.product.embedded.ProductStatus;
 import lombok.*;
 
 import javax.persistence.*;

@@ -1,27 +1,23 @@
 package com.ryuqq.easyRandom.dummy;
 
-import com.ryuqq.easyRandom.dmain.cart.Cart;
-import com.ryuqq.easyRandom.dmain.product.Product;
-import com.ryuqq.easyRandom.dmain.product.ProductGroup;
+import com.ryuqq.easyRandom.common.AbstractProvider;
+import java.util.List;
 
-import java.util.HashMap;
-import java.util.Map;
-public class EntityFactoryRegistry<T> {
+public class EntityFactoryRegistry extends AbstractProvider<Class<?>, DummyDataFactory<?>> {
 
-    private static final Map<Class<?>, DummyDataFactory<?>> FACTORY_MAP = new HashMap<>();
-
-    static {
-        FACTORY_MAP.put(Product.class, new ProductFactory());
-        FACTORY_MAP.put(ProductGroup.class, new ProductGroupFactory());
-        FACTORY_MAP.put(Cart.class, new CartFactory());
+    public EntityFactoryRegistry(List<DummyDataFactory<?>> DummyDataFactories){
+        for(DummyDataFactory<?> factory : DummyDataFactories){
+            map.put(factory.getClassType(), factory);
+        }
     }
 
-    @SuppressWarnings("unchecked")
-    public static <T> DummyDataFactory<T> getFactoryByEntity(Class<T> entityClass) {
-        DummyDataFactory<T> factory = (DummyDataFactory<T>) FACTORY_MAP.get(entityClass);
-        if (factory == null) {
-            throw new IllegalArgumentException("No factory found for class: " + entityClass.getName());
+
+    public DummyDataFactory<?> getByClassType(Class<?> clazz) {
+        DummyDataFactory<?> factory = super.get(clazz);
+        if (!clazz.equals(factory.getClassType())) {
+            throw new IllegalArgumentException("Factory for key: " + factory.getClassType() + " does not produce expected type: " + clazz.getName());
         }
         return factory;
     }
+
 }

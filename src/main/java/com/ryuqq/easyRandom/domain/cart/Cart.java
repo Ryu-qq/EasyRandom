@@ -1,6 +1,6 @@
-package com.ryuqq.easyRandom.dmain.cart;
+package com.ryuqq.easyRandom.domain.cart;
 
-import com.ryuqq.easyRandom.dmain.cart.embedded.CartDetails;
+import com.ryuqq.easyRandom.domain.cart.embedded.CartDetails;
 import lombok.*;
 
 import javax.persistence.*;

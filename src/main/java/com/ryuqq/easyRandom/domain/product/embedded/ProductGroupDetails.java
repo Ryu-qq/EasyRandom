@@ -1,4 +1,4 @@
-package com.ryuqq.easyRandom.dmain.product.embedded;
+package com.ryuqq.easyRandom.domain.product.embedded;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.ryuqq.easyRandom.dmain.common;
+package com.ryuqq.easyRandom.domain.common;
 
 
 import lombok.Getter;

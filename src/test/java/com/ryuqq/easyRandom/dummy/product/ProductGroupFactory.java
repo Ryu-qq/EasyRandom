@@ -1,15 +1,17 @@
-package com.ryuqq.easyRandom.dummy;
+package com.ryuqq.easyRandom.dummy.product;
 
-import com.ryuqq.easyRandom.dmain.product.ProductGroup;
-import com.ryuqq.easyRandom.dummy.random.product.ProductGroupDetailsRandomizer;
+import com.ryuqq.easyRandom.domain.product.ProductGroup;
+import com.ryuqq.easyRandom.dummy.AbstractDummyDataFactory;
+import com.ryuqq.easyRandom.dummy.product.random.ProductGroupDetailsRandomizer;
 
 import org.jeasy.random.api.Randomizer;
+import org.springframework.boot.test.context.TestConfiguration;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup>  {
+@TestConfiguration
+public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> {
     @Override
     protected Class<ProductGroup> getTypeClass() {
         return ProductGroup.class;
@@ -24,4 +26,8 @@ public class ProductGroupFactory extends AbstractDummyDataFactory<ProductGroup> 
         return fieldRandomizers;
     }
 
+    @Override
+    public Class<ProductGroup> getClassType() {
+        return ProductGroup.class;
+    }
 }

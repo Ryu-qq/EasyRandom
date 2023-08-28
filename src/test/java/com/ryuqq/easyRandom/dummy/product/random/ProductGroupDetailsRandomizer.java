@@ -1,8 +1,9 @@
-package com.ryuqq.easyRandom.dummy.random.product;
+package com.ryuqq.easyRandom.dummy.product.random;
 
-import com.ryuqq.easyRandom.dmain.product.embedded.Price;
-import com.ryuqq.easyRandom.dmain.product.embedded.ProductGroupDetails;
-import com.ryuqq.easyRandom.dmain.product.embedded.ProductStatus;
+import com.ryuqq.easyRandom.domain.product.embedded.Price;
+import com.ryuqq.easyRandom.domain.product.embedded.ProductGroupDetails;
+import com.ryuqq.easyRandom.domain.product.embedded.ProductStatus;
+import com.ryuqq.easyRandom.dummy.product.random.PriceRandomizer;
 import org.jeasy.random.EasyRandom;
 import org.jeasy.random.EasyRandomParameters;
 import org.jeasy.random.api.Randomizer;
